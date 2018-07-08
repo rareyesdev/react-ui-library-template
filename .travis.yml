@@ -5,5 +5,8 @@ cache:
     - node_modules
 notifications:
   email: false
+deploy:
+  on:
+    all_branches: true
 after_success:
   - npm run travis-deploy-once "npm run semantic-release"
