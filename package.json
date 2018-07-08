@@ -1,6 +1,6 @@
 {
   "name": "@ramonrf/react-ui-library-template",
-  "version": "0.1.0-alpha.4",
+  "version": "0.0.0-development",
   "description": "Template for React UI Library projects",
   "author": "Ramon Alejandro Reyes Fajardo",
   "license": "ISC",
@@ -13,17 +13,19 @@
     "access": "public"
   },
   "scripts": {
-    "transpile-js": "babel src --out-dir lib --source-maps",
-    "copy-assets": "copyfiles -u 1 ./src/**/*.js ./src/**/*.jsx ./src/**/*.css ./src/**/*.svg ./src/**/*.jpg ./src/**/*.gif lib",
     "build": "npm run clean-dist && (npm run copy-assets)",
-    "test-no-lint": "cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
-    "posttest-no-lint": "npm run remove-nyc_output",
-    "lint": "stylelint \"src/**/*.css\"",
-    "test": "npm run lint && npm run test-no-lint",
-    "prepublish": "npm run build",
-    "storybook": "start-storybook -p 9001 -c .storybook",
+    "copy-assets": "copyfiles -u 1 ./src/**/*.js ./src/**/*.jsx ./src/**/*.css ./src/**/*.svg ./src/**/*.jpg ./src/**/*.gif lib",
     "clean-dist": "shx rm -rf dist & shx rm -rf lib",
-    "remove-nyc_output": "shx rm -rf .nyc_output"
+    "lint": "stylelint \"src/**/*.css\"",
+    "posttest-no-lint": "npm run remove-nyc_output",
+    "prepublish": "npm run build",
+    "remove-nyc_output": "shx rm -rf .nyc_output",
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "test": "npm run lint && npm run test-no-lint",
+    "test-no-lint": "cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
+    "transpile-js": "babel src --out-dir lib --source-maps",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "nyc": {
     "check-coverage": false,
@@ -62,11 +64,12 @@
     "postcss-cssnext": "^3.1.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "semantic-release-cli": "^4.0.5",
     "shx": "^0.2.2",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0",
-    "webpack": "^3.12.0"
+    "webpack": "^3.12.0",
+    "travis-deploy-once": "^5.0.1",
+    "semantic-release": "^15.6.3"
   },
   "peerDependencies": {
     "react": "^16.3.2",

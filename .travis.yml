@@ -1,14 +1,16 @@
 language: node_js
 cache:
   directories:
-    - "node_modules"
-deploy:
-  provider: npm
-  email: ramon.reyes.fajardo@gmail.com
-  api_key:
-    secure: C8+U0XZaMk2sSPU17A+85hIhrITLTCkHf3hvypX/UQ6IV3ExXRSYVoj3ZXatS5sDD+KCjJ9gUxrRuOjH3/TBBzBwGI5oYFoRpPp9HucLbnz/Ef1/KaYHte48f3Om5sgnwOG66W1Vvk7yTGS+mMZXdIIxa58vDfmkrrZ5vvMifjVJDgzVFa9mA81oho3e5CStfAfj9Yhsy92XZqdMxy2jV4fOwfSi9iw611lyR9rIv78wWSzeDj+BRJS56FMm/4qOpjYorP9OOZE9VzRotabN761aWAY1z5Ex9HDHSXquD7PSyxqo6ZkQnWSG+hUEH3sALuE0G4/ljxBD914xFeeKreera8p6JQZN5e1PFI4+gCy6whciBWmsv1BFvP6j9Zw7vlwJW+JUxFeLnDHCxYwfv9jnzAAFMmWW0jSrKfqT8Dc2SYMDGFtVjt28wYt4SBdP73OGTJhScwYuNemRY1uTDKNL2DngXlAt6PMZscm++CuoH9VNp5831YIfSzm/r7GevV7BR/jpr9WYn1OuYjy5xo2m6QKGCLR4kdfrEsvCds6dZUg7qNMUhlLDSzKJcLie9BwpI4FXeEt0TdWaeAS+v7JboZ/VyD2zI2rS4CgR+2h9j/lHGcUc8uW7wut7LbnT3z8wi801ISNCWPiIPp0e/B+aPtzvUB3m7G125XlDj2g=
-  on:
-    all_branches: true
-    repo: ramonrf/react-ui-library-template
+    - ~/.npm
 notifications:
   email: false
+node_js:
+  - '9'
+  - '8'
+  - '6'
+  - '4'
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
