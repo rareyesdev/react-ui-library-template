@@ -11,5 +11,6 @@ deploy:
   on:
     all_branches: true
     repo: ramonrf/react-ui-library-template
+  skip_cleanup: true
 notifications:
   email: false
