@@ -1,0 +1,75 @@
+{
+  "name": "@ramonrf/react-ui-library-template",
+  "version": "0.1.0",
+  "description": "Template for React UI Library projects",
+  "author": "Ramon Alejandro Reyes Fajardo",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramonrf/react-ui-library-template.git"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "transpile-js": "babel src --out-dir lib --source-maps",
+    "copy-assets": "copyfiles -u 1 ./src/**/*.js ./src/**/*.jsx ./src/**/*.css ./src/**/*.svg ./src/**/*.jpg ./src/**/*.gif lib",
+    "build": "npm run clean-dist && (npm run copy-assets)",
+    "test-no-lint": "cross-env NODE_ENV=test nyc mocha --opts mocha.opts \"src/**/*.test.{js,jsx}\"",
+    "posttest-no-lint": "npm run remove-nyc_output",
+    "lint": "stylelint \"src/**/*.css\"",
+    "test": "npm run lint && npm run test-no-lint",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "clean-dist": "shx rm -rf dist & shx rm -rf lib",
+    "remove-nyc_output": "shx rm -rf .nyc_output"
+  },
+  "nyc": {
+    "check-coverage": false,
+    "statements": 10,
+    "branches": 10,
+    "functions": 10,
+    "lines": 10,
+    "sourceMap": false,
+    "instrument": false,
+    "cache": true,
+    "include": [
+      "src/**/*.js{,x}"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "text-summary"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@storybook/react": "^3.4.8",
+    "@storybook/addon-actions": "^3.4.8",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "classnames": "^2.2.5",
+    "copyfiles": "^2.0.0",
+    "core-js": "^2.5.7",
+    "cross-env": "^5.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "postcss-cssnext": "^3.1.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "shx": "^0.2.2",
+    "stylelint": "^9.3.0",
+    "stylelint-config-standard": "^18.2.0",
+    "webpack": "^3.12.0"
+  },
+  "peerDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "classnames": "^2.2.5",
+    "babel-runtime": "^6.26.0"
+  }
+}
