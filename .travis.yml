@@ -2,6 +2,7 @@ language: node_js
 cache:
   directories:
     - "node_modules"
+before_deploy: "npm run build"
 deploy:
   provider: npm
   email: ramon.reyes.fajardo@gmail.com
