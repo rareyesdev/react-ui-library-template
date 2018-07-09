@@ -24,7 +24,7 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "release": {
-    "branch": "develop"
+    "branch": "fix/remove-unused-line"
   },
   "publishConfig": {
     "tag": "alpha"
