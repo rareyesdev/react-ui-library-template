@@ -13,7 +13,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "npm run clean-dist && (npm run copy-assets)",
+    "build": "npm run clean-dist && npm run copy-assets",
     "copy-assets": "copyfiles -u 1 ./src/**/*.js ./src/**/*.jsx ./src/**/*.css ./src/**/*.svg ./src/**/*.jpg ./src/**/*.gif lib",
     "clean-dist": "shx rm -rf dist & shx rm -rf lib",
     "lint": "stylelint \"src/**/*.css\"",
