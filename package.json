@@ -8,7 +8,6 @@
     "type": "git",
     "url": "https://github.com/ramonrf/react-ui-library-template.git"
   },
-  "sideEffects": false,
   "scripts": {
     "build": "npm run clean-dist && npm run copy-assets",
     "copy-assets": "copyfiles -u 1 ./src/**/*.js ./src/**/*.jsx ./src/**/*.css ./src/**/*.svg ./src/**/*.jpg ./src/**/*.gif lib",
@@ -24,6 +23,13 @@
     "transpile-js": "babel src --out-dir lib --source-maps",
     "travis-deploy-once": "travis-deploy-once"
   },
+  "release": {
+    "branch": "develop"
+  },
+  "publishConfig": {
+    "tag": "alpha"
+  },
+  "sideEffects": false,
   "nyc": {
     "check-coverage": false,
     "statements": 10,
