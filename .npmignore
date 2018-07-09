@@ -3,5 +3,4 @@
 .stylelintrc
 .travis.yml
 mocha.opts
-webpack.config.js
 coverage
