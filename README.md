@@ -2,10 +2,18 @@
 
 <p align="center">
   <a href="https://travis-ci.org/ramonrf/react-ui-library-template/builds">
-    <img src="https://travis-ci.org/ramonrf/react-ui-library-template.svg?branch=develop" alt="Build Status">
+    <img src="https://travis-ci.org/ramonrf/react-ui-library-template.svg?branch=develop" alt="Travis Build Status">
   </a>
   <a href="https://github.com/semantic-release/semantic-release">
-    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Semantic Release">
+    <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Using Semantic Release">
+  </a>
+</p>
+<p align="center">
+  <a href="https://www.npmjs.com/package/@ramonrf/react-ui-library-template">
+    <img src="https://img.shields.io/npm/v/@ramonrf/react-ui-library-template/alpha.svg" alt="NPM Version - Alpha Channel">
+  </a>
+  <a href="https://www.npmjs.com/package/@ramonrf/react-ui-library-template">
+    <img src="https://img.shields.io/npm/dt/@ramonrf/react-ui-library-template.svg" alt="NPM Downloads">
   </a>
 </p>
 
