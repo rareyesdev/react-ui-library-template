@@ -1,4 +1,4 @@
-# [⛔️ DEPRECATED] react-ui-library-template
+# react-ui-library-template ⛔️ DEPRECATED
 
 <p align="center">
   <a href="http://unmaintained.tech/">
